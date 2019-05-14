@@ -104,3 +104,20 @@ let removeDuplicate = arr => {
   return new Set(arr);
 };
 console.log(removeDuplicate([1, 2, 2, 3, 'a', 'a', 4, 4, 5, 6]));
+
+// There are two arrays with individual values, write a JavaScript program to compute the sum of each individual index value from the given arrays.
+function sumArraysByIndex(array1, array2) {
+  var result = [];
+  var length = Math.max(array1.length, array2.length);
+  for (var i = 0; length > i; i++) {
+    if (array1[i] && array2[i]) {
+      result.push(array1[i] + array2[i]);
+    } else if (array1[i] && !array2[i]) {
+      result.push(array1[i]);
+    } else if (array2[i] && !array1[i]) {
+      result.push(array2[i]);
+    }
+  }
+  return result;
+}
+console.log(sumArraysByIndex([1, 0, 2, 3, 4], [3, 5, 6, 7, 8, 13]));
