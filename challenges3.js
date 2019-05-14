@@ -98,3 +98,9 @@ let sumProduct = arr => {
 };
 
 console.log(sumProduct([1, 2, 3, 4, 5, 6]));
+
+// Write a JavaScript program to remove duplicate items from an array (ignore case sensitivity).
+let removeDuplicate = arr => {
+  return new Set(arr);
+};
+console.log(removeDuplicate([1, 2, 2, 3, 'a', 'a', 4, 4, 5, 6]));
