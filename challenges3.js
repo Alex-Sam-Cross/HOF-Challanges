@@ -1,6 +1,6 @@
 // Write a JavaScript function to check whether an 'input' is an array or not.
 
-var is_array = function(input) {
+is_array = (input) => {
   if (toString.call(input) === '[object Array]') return true;
   return false;
 };
@@ -9,7 +9,7 @@ console.log(is_array([1, 2, 4, 0]));
 
 //Write a JavaScript program which accept a number as input and insert dashes (-) between each two even numbers. For example if you accept 025468 the output should be 0-254-6-8.
 
-let insertDash = num => {
+insertDash = (num) => {
   let str = num.toString();
   let result = [str[0]];
   for (var x = 1; x < str.length; x++) {
@@ -21,11 +21,11 @@ let insertDash = num => {
   }
   return result.join('');
 };
-console.log(insertDash(025468));
+console.log(insertDash(02546));
 
 // Write a JavaScript program which accept a string as input and swap the case of each character. For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.
 
-let swapCase = str => {
+swapCase = (str) => {
   let result = '';
   for (let char of str) {
     result +=
@@ -48,7 +48,7 @@ console.log(swapCase('The Quick Brown Fox'));
 // "row 1"
 // ------
 // a sample 2-D array
-let printElem = arr => {
+printElem = (arr) => {
   for (let i in arr) {
     console.log(`row ${i}`);
     for (let j in arr[i]) {
@@ -65,7 +65,7 @@ printElem([
 ]);
 
 // Write a JavaScript program to find the sum of squares of a numeric vector.
-// function sum_sq(arr) {
+// sum_sq = (arr) => {
 //   var sum = 0,
 //     i = arr.length;
 //   while (i--) {
@@ -75,19 +75,17 @@ printElem([
 // }
 // console.log(sum_sq([0, 1, 2, 3, 4]));
 
-function sum_s(arr) {
+sum_s = (arr) => {
   let sum = 0;
   arr.forEach(arr => {
     sum += Math.pow(arr, 2);
   });
   return sum;
 }
-
 console.log(sum_s([0, 1, 2, 3, 4]));
 
 // Write a JavaScript program to compute the sum and product of an array of integers.
-
-let sumProduct = arr => {
+sumProduct = (arr) => {
   let s = 0;
   let p = 1;
   arr.forEach(arr => {
@@ -100,13 +98,13 @@ let sumProduct = arr => {
 console.log(sumProduct([1, 2, 3, 4, 5, 6]));
 
 // Write a JavaScript program to remove duplicate items from an array (ignore case sensitivity).
-let removeDuplicate = arr => {
+removeDuplicate = (arr) => {
   return new Set(arr);
 };
 console.log(removeDuplicate([1, 2, 2, 3, 'a', 'a', 4, 4, 5, 6]));
 
 // There are two arrays with individual values, write a JavaScript program to compute the sum of each individual index value from the given arrays.
-function sumArraysByIndex(array1, array2) {
+sumArraysByIndex = (array1, array2) => {
   var result = [];
   var length = Math.max(array1.length, array2.length);
   for (var i = 0; length > i; i++) {

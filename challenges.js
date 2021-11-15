@@ -1,45 +1,36 @@
 // CHALLENGE 1: REVERSE A STRING
 // Return a string in reverse
 // ex. reverseString('hello') === 'olleh'
-function reverseString(str) {
-  // >> return str.split('').reverse().join('');
-
-  ////////
+reverseString = (str) => {
+  // return str.split('').reverse().join('');
 
   // let revString = '';
   // for(let i = str.length -1; i >= 0; i--){
-  //     revString = revString + str[i];
-  // }
-  // return revString
+  //      revString = revString + str[i];
+  //  }
+  //  return revString
 
-  ////////
+  //  let revString = '';
+  //  for(let i = 0; i <= str.length -1; i++){
+  //      revString = str[i] + revString;
+  //  }
+  //  return revString
 
-  // let revString = '';
-  // for(let i = 0; i <= str.length -1; i++){
-  //     revString = str[i] + revString;
-  // }
-  // return revString
+  //  Reversing a string without using built-in function
+  //  let revString = '';
+  //  for(let char of str){
+  //      revString = char + revString;
+  //  }
+  //  return revString
 
-  ////////
-  // Reversing a string without using built-in function
-  // let revString = '';
-  // for(let char of str){
-  //     revString = char + revString;
-  // }
-  // return revString
-
-  ///////
-
-  // let revString = '';
-  // str.split('').forEach(char => revString = char + revString);
-  // return revString
-
-  ////////
+  //  let revString = '';
+  //  str.split('').forEach(char => revString = char + revString);
+  //  return revString
 
   return str.split('').reduce((revString, char) => char + revString);
 }
 
-function reverseInt(int) {
+reverseInt = (int) => {
   //* Math.sign(int) keep the negitive symbol if needed.
   return (
     parseInt(
@@ -52,7 +43,7 @@ function reverseInt(int) {
   );
 }
 
-function isPalindrome(str) {
+isPalindrome = (str) => {
   const revString = str
     .split('')
     .reverse()
@@ -60,32 +51,25 @@ function isPalindrome(str) {
   return revString === str;
 }
 
-function capitalizeLetters(str) {
+capitalizeLetters = (str) => {
   // const strArr = str.toLowerCase().split(' ');
-  // //const strArr = str.split(' ');
-
   // for(let i = 0; i < strArr.length; i++) {
   //   strArr[i] = strArr[i].substring(0, 1).toUpperCase() + strArr[i].substring(1);
   // }
-
   // return strArr.join(' ');
 
-  /////////////////////////////
+  // return str.replace(/\b[a-z]/gi, function(char) {
+  //   return char.toUpperCase();
+  // });
 
   return str
     .toLowerCase()
     .split(' ')
     .map(word => word[0].toUpperCase() + word.substr(1))
     .join(' ');
-
-  /////////////////////////////
-
-  // return str.replace(/\b[a-z]/gi, function(char) {
-  //   return char.toUpperCase();
-  // });
 }
 
-function modeCharactor(str) {
+modeCharactor = (str) => {
   const charMap = {};
   let maxNum = 0;
   let maxChar = '';
@@ -109,7 +93,7 @@ function modeCharactor(str) {
   return maxChar + maxNum;
 }
 
-function fizzBuzz() {
+fizzBuzz = () => {
   for (let i = 0; i <= 100; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
       console.log('FizzBuzz');
@@ -123,15 +107,11 @@ function fizzBuzz() {
   }
 }
 
-function longestWord(sen) {
-  //create filtered array
+longestWord = (sen) => {
   const wordArr = sen.match(/[a-zA-Z0-9]+/g);
-  //sort array by length, longest first
   const sortedArr = wordArr.sort((a, b) => b.length - a.length);
-  //if there are more then one longest word, place them into another arry to return them all
-  //we allready have an array that has the longerst first (line above) so pass back all that are that length
   const longArr = sortedArr.filter(word => word.length === sortedArr[0].length);
-  // if there is only one work the return the one word, otherwise retur the array.
+
   if (longArr === 0) {
     return longArr[0];
   } else {
@@ -144,7 +124,7 @@ const intOutput = reverseInt(-12345);
 const palindrome = isPalindrome('racecar');
 const capitalizeFirstLetters = capitalizeLetters('i love code challanges');
 const modeChar = modeCharactor('JavaScript');
-// const fizz = fizzBuzz();
+const fizz = fizzBuzz();
 const longWord = longestWord('Hello there my name is Sam');
 
 console.log(greeting);
@@ -153,5 +133,6 @@ console.log(strOutput);
 console.log(intOutput);
 console.log(palindrome);
 console.log(capitalizeFirstLetters);
+console.log(fizz);
 console.log(modeChar);
 console.log(longWord);
