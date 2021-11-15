@@ -1,0 +1,28 @@
+
+Map vs. ForEach
+
+Map & ForEach Defined;
+
+forEach() — executes a provided function once for each array element.
+map() — creates a new array with the results of calling a provided function on every element in the calling array.
+What exactly does this mean?
+
+So, the forEach() method doesn’t realy return anything "undefined". It simply calls a provided function on each element in your array. This callback is allowed to mutate the calling array.
+Meanwhile, the map() method will also call a provided function on every element in the array. The difference is that map() utilizes return values and actually returns a new Array of the same size.
+
+Speed Considerations:
+jsPerf is a great website for testing the speed of different JavasScript methods and functions.
+forEach() vs map() test:
+forEach() was more than 70% slower than map(). (Your browser may be different). but forEach() is genrally slower.
+
+Functional Considerations:
+It’s important to also understand that using map() may be preferable if you favor functional programming.
+This is because forEach() affects and changes our original Array, whereas map() returns an entirely new Array — thus leaving the original array unchanged.
+
+forEach() may be preferable when you’re not trying to change the data in your array, but instead want to just do something with it — like saving it to a database or logging it out:
+And map() might be preferable when changing or altering data. Not only is it faster but it returns a new Array. This means we can do cool things like chaining on other methods ( map(), filter(), reduce(), etc.)
+
+Key Takeaways
+Just about anything you can do with forEach() you can do with map(), and vise versa.
+map() allocates memory and stores return values. forEach() throws away return values and always returns undefined.
+forEach() will allow a callback function to mutate the current array. map() will instead return a new array.
